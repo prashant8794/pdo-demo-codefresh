@@ -12,9 +12,9 @@ spec:
     namespace: nginx-pod-dev
     name: CLUSTER_NAME
   source:
-    repoURL: https://github.com/GITHUB_USER/GITHUB_REPO.git
+    repoURL: https://github.com/prashant8794/pdo-demo-codefresh.git
     targetRevision: main
-    path: ./k8s-resources/nginx-pod/dev
+    path: ./k8s-resources/nginx-app/dev
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
