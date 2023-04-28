@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: https://github.com/prashant8794/pdo-demo-codefresh.git
     targetRevision: main
-    path: ./k8s-resources/nginx-app/dev
+    path: ./k8s-resources/nginx/dev
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
