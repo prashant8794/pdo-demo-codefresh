@@ -1,31 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webserver-nginx
+  name: nginx-deployment
   labels:
-    app: webserver-nginx
+    app: nginx
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: webserver-nginx
+      app: nginx
   template:
     metadata:
       labels:
-        app: webserver-nginx
+        app: nginx
     spec:
       containers:
-      - name: webserver-nginx
-        image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:latest
-        imagePullPolicy: Always
+      - name: nginx
+        image: nginx:1.7.9
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: quay-regcred
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-          periodSeconds: 5
