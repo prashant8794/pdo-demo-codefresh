@@ -10,7 +10,7 @@ spec:
   project: default
   destination:
     namespace: nginx-codefresh
-    name: gke_crafty-hall-383007_us-east1-b_cluster-1
+    name: gke-crafty-hall-383007-us-east1-b-cluster-1
   source:
     repoURL: https://github.com/prashant8794/pdo-demo-codefresh.git
     targetRevision: main
