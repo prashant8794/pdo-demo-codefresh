@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx
+  name: nginx-codefresh
   labels:
-    app: nginx
+    app: nginx-codefresh
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
