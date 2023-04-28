@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-codefresh-app
+  labels:
+    app: nginx-codefresh-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: nginx-codefresh-app
+    name: gke-crafty-hall-383007-us-east1-b-cluster-1
+  source:
+    repoURL: https://github.com/prashant8794/pdo-demo-codefresh.git
+    targetRevision: main
+    path: ./k8s-resources/nginx/stage
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
