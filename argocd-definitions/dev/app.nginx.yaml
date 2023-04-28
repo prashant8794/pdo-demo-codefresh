@@ -9,8 +9,8 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: nginx-pod-dev
-    name: CLUSTER_NAME
+    namespace: nginx-codefresh
+    name: gke-crafty-hall-383007-us-central1-c-cluster-1-test
   source:
     repoURL: https://github.com/prashant8794/pdo-demo-codefresh.git
     targetRevision: main
