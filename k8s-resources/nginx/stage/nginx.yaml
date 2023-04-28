@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webserver-nginx
   labels:
-    app: nginx
+    app: webserver-nginx
 spec:
   replicas: 2
   selector:
@@ -16,10 +16,12 @@ spec:
     spec:
       containers:
       - name: webserver-nginx
-        image: nginx:1.14.2
+        image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: quay-regcred
         readinessProbe:
           httpGet:
             path: /
