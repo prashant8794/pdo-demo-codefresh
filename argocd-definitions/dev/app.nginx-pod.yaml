@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-pod-dev
+  name: nginx
   labels:
-    app: nginx-pod-dev
+    app: nginx
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
